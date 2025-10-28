@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"; //importaciones
+import { useEffect, useState} from "react"; //importaciones
+import { Link } from "react-router-dom";
 import "./Productos.css";
 
 export default function Productos() {
@@ -14,8 +15,9 @@ export default function Productos() {
 
 
   return (
-    <div className="productos-container"> 
+    <div className="productos-container">
       <h2 className="productos-title">Lista de productos</h2>
+
       {productos.length === 0 ? (
         <p>Cargando productos...</p>
       ) : (
@@ -29,6 +31,12 @@ export default function Productos() {
               <p className="producto-categoria">Categoría: {producto.category}</p>
               <p className="producto-precio">${producto.price}</p>
               <p className="producto-rating">⭐ {producto.rating.rate} ({producto.rating.count} reseñas)</p>
+
+              {/* Enlace al detalle */}
+              <Link to={`/producto/${producto.id}`} className="producto-boton">
+                Ver detalle
+              </Link>
+
             </div>
           ))}
         </div>
