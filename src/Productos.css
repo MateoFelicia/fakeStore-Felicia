@@ -79,3 +79,57 @@
   font-size: 16px;
   margin-top: 40px;
 }
+
+.producto-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 40px;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.producto-card {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.producto-precio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #008000;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 600px) {
+  .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .producto-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .producto-titulo {
+    font-size: 13px;
+  }
+}
